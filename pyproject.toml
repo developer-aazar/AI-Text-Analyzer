@@ -1,0 +1,14 @@
+[project]
+name = "ai-project"
+version = "0.1.0"
+description = "AI Text Correction API"
+readme = "README.md"
+requires-python = ">=3.14"
+
+dependencies = [
+    "fastapi>=0.141.1",
+    "uvicorn[standard]>=0.38.0",
+    "google-genai>=2.20.0",
+    "pydantic-settings>=2.15.0",
+    "python-dotenv>=1.2.3",
+]
