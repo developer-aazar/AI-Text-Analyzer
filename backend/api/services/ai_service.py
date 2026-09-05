@@ -11,7 +11,15 @@ def call_ai(prompt):
         input=prompt
     )
 
-    result = json.loads(response.output_text)
+    raw_output = response.output_text.strip()
+
+    if raw_output.startswith("```json"):
+        raw_output = raw_output[7:]
+
+    if raw_output.endswith("```"):
+            raw_output = raw_output[:-3]
+
+    result = json.loads(raw_output)
 
     return result
 

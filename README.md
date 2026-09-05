@@ -46,6 +46,7 @@ AI project/
 ├── requirements.txt
 ├── uv.lock
 └── README.md
+
 🔄 How It Works
 User
   │
@@ -127,8 +128,6 @@ Create a .env file in the project root:
 
 AI_API_KEY=your_gemini_api_key
 
-Never commit your .env file or expose your API key publicly.
-
 5. Start the FastAPI backend
 
 From the project root:
@@ -143,17 +142,18 @@ http://localhost:8000
 Swagger documentation:
 
 http://localhost:8000/docs
+
 6. Start the Streamlit frontend
 
 Open another terminal, activate the virtual environment, and run:
 
 streamlit run frontend/app_gui.py
+
 🔐 Environment Variables
 
 The application requires the following environment variable:
 
-Variable	Description
-AI_API_KEY	Google Gemini API key
+AI_API_KEY = Google Gemini API key
 
 🎯 Project Goal
 
