@@ -1,24 +1,25 @@
-AI Text Analyzer 🤖📝
+# AI Text Analyzer
 
-An AI-powered text analysis and correction application built with FastAPI, Google Gemini, and Streamlit.
+An AI-powered text correction application built with **FastAPI**, **Gemini**, and **Streamlit**.
 
-The application analyzes user-provided text, identifies grammar, spelling, and punctuation mistakes, and returns both a fully corrected version and structured mistake details.
+The application analyzes user-provided text and identifies **grammar, spelling, and punctuation mistakes**, while also providing a corrected version of the original text.
 
-✨ Features
-🤖 AI-powered text analysis and correction
-📖 Grammar mistake detection
-🔤 Spelling mistake detection
-✍️ Punctuation mistake detection
-🔄 Displays both the original and corrected text
-📦 Structured API responses using Pydantic
-⚡ FastAPI backend
-📚 Interactive Swagger/OpenAPI documentation
-🖥️ Streamlit-based user interface
-🔐 Environment-based API key configuration
-🧩 Separation of concerns using routers, schemas, services, and core configuration
-🏗️ Project Structure
+## ✨ Features
 
-AI-Text-Analyzer/
+- AI-powered text correction
+- Grammar mistake detection
+- Spelling mistake detection
+- Punctuation mistake detection
+- Shows the original and corrected text
+- Structured API responses using Pydantic
+- FastAPI backend with Swagger/OpenAPI documentation
+- Streamlit-based user interface
+- Environment-based API key configuration
+
+## 🏗️ Project Structure
+
+
+AI Text Analyzer/
 │
 ├── backend/
 │   └── api/
@@ -48,28 +49,26 @@ AI-Text-Analyzer/
 
 🔄 How It Works
 User
- │
- ▼
+  │
+  ▼
 Streamlit Frontend
- │
- ▼
+  │
+  ▼
 FastAPI API
- │
- ▼
+  │
+  ▼
 AI Service
- │
- ▼
-Google Gemini API
- │
- ▼
+  │
+  ▼
+Gemini API
+  │
+  ▼
 Structured Analysis
- │
- ├── Corrected Text
- ├── Grammar Mistakes
- ├── Spelling Mistakes
- └── Punctuation Mistakes
-
-The AI response is processed into a structured format before being returned by the API, making it easier for the frontend or other applications to consume.
+  │
+  ├── Corrected Text
+  ├── Grammar Mistakes
+  ├── Spelling Mistakes
+  └── Punctuation Mistakes
 
 🛠️ Tech Stack
 Backend
@@ -82,7 +81,7 @@ Google Gemini API
 Google GenAI SDK
 Frontend
 Streamlit
-Development Tools
+Development
 Git
 GitHub
 uv
@@ -90,7 +89,7 @@ uv
 📋 API
 POST /correct
 
-Analyzes the submitted text, identifies mistakes, and returns a corrected version.
+Analyzes and corrects the submitted text.
 
 Request
 {
@@ -110,52 +109,30 @@ Response
   "punctuation_mistakes": []
 }
 
-Each mistake category returns a list containing zero or more detected mistakes.
+The API also provides interactive Swagger documentation at:
 
-If no mistakes are found in a category, the API returns an empty list:
-
-[]
-
-📚 API Documentation
-
-FastAPI automatically provides interactive API documentation.
-
-After starting the backend, open:
-
-http://localhost:8000/docs
-
-From Swagger UI, you can test the /correct endpoint directly.
+/docs
 
 🚀 Running Locally
-1. Clone the Repository
-git clone https://github.com/developer-aazar/AI-Text-Analyzer.git
-cd AI-Text-Analyzer
-
-2. Create and Activate a Virtual Environment
+1. Clone the repository
+git clone <https://github.com/developer-aazar/AI-Text-Analyzer>
+cd "AI project"
+2. Create and activate a virtual environment
 python -m venv .venv
-Linux
 source .venv/bin/activate
-Windows
-.venv\Scripts\activate
-
-3. Install Dependencies
+3. Install dependencies
 pip install -r requirements.txt
-
-4. Configure Environment Variables
+4. Configure environment variables
 
 Create a .env file in the project root:
 
-AI_API_KEY=your_gemini_api_key_here
+AI_API_KEY=your_gemini_api_key
 
-
-5. Start the FastAPI Backend
+5. Start the FastAPI backend
 
 From the project root:
 
 cd backend
-
-Then run:
-
 uvicorn api.main:app --reload
 
 The backend will be available at:
@@ -166,46 +143,34 @@ Swagger documentation:
 
 http://localhost:8000/docs
 
-6. Start the Streamlit Frontend
+6. Start the Streamlit frontend
 
-Open another terminal, activate the virtual environment, and from the project root run:
+Open another terminal, activate the virtual environment, and run:
 
 streamlit run frontend/app_gui.py
 
 🔐 Environment Variables
-Variable	Description
-AI_API_KEY	Google Gemini API key used for AI text analysis
+
+The application requires the following environment variable:
+
+AI_API_KEY = Google Gemini API key
 
 🎯 Project Goal
 
 This project was built to explore practical AI integration with Python backend development.
 
-Rather than simply sending text to an AI model and displaying its response, the application focuses on returning structured AI output through a backend API.
+Rather than simply returning a corrected sentence, the API produces structured information about the detected mistakes, making the AI output easier for a frontend or another application to consume.
 
-The project demonstrates concepts such as:
-
-API architecture
-Request validation
-Response validation
-Pydantic schemas
-Service-layer separation
-AI API integration
-Structured JSON responses
-Backend and frontend integration
-Environment variable management
 🔮 Future Improvements
-🎤 Voice input and response
-👤 User authentication
-📜 Text analysis history
-🌍 Multiple language support
-⚠️ Improved AI and API error handling
-🚦 Rate limiting
-🗄️ Database integration
-☁️ Production API deployment
-📊 Production monitoring
 
-👨‍💻 Author
+Possible future improvements include:
 
-Abdul Latif (Aazar)
-
-Backend Developer | Python | FastAPI | AI Integration
+Voice message feature
+User authentication
+Text history
+Multiple language support
+Improved AI error handling
+Rate limiting
+Database integration
+API deployment
+Production monitoring
