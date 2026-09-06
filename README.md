@@ -18,7 +18,7 @@ The application analyzes user-provided text and identifies **grammar, spelling, 
 
 ## 🏗️ Project Structure
 
-
+```text
 AI Text Analyzer/
 │
 ├── backend/
