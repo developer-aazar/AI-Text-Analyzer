@@ -43,7 +43,7 @@ if input_box:
             try:
 
                 response = req.post(
-                    "http://localhost:8000/correct",
+                    "https://ai-text-analyzer-production-cef0.up.railway.app/correct",
                     json={"text": input_box}
                 )
 
