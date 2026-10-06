@@ -116,7 +116,7 @@ The API also provides interactive Swagger documentation at:
 🚀 Running Locally
 1. Clone the repository
 git clone <https://github.com/developer-aazar/AI-Text-Analyzer>
-cd "AI project"
+
 2. Create and activate a virtual environment
 python -m venv .venv
 source .venv/bin/activate
