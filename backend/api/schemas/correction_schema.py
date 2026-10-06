@@ -15,3 +15,8 @@ class CorrectionResponse(BaseModel):
     punctuation_mistakes: list[Mistake]
 
 
+class AIAnalysisResponse(BaseModel):
+    corrected_text: str
+    grammar_mistakes: list[Mistake]
+    spelling_mistakes: list[Mistake]
+    punctuation_mistakes: list[Mistake]

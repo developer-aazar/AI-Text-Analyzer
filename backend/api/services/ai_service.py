@@ -1,6 +1,7 @@
 from google import genai
 from api.core.config import settings
 import json
+from schemas.correction_schema import AIAnalysisResult, CorrectionResponse
 
 def call_ai(prompt):
 
@@ -21,7 +22,9 @@ def call_ai(prompt):
 
     result = json.loads(raw_output)
 
-    return result
+    validated_result = AIAnalysisResult(**result)
+
+    return validated_result
 
 def correct_text(text: str):
     prompt = f"""
@@ -38,7 +41,7 @@ def correct_text(text: str):
 
     Return the result only as valid JSON using exactly this structure:
     {{
-        "corrected_text": "corrected version here",
+        "analysis": "corrected version here",
         "grammar_mistakes": [
             {{
                 "mistake": "original mistake",
@@ -62,8 +65,16 @@ def correct_text(text: str):
     Text:
     {text}
     """
-    corrected_text = call_ai(prompt)
-    return corrected_text
+
+    analysis = call_ai(prompt)
+
+    return CorrectionResponse(
+        original_text=text,
+        corrected_text=analysis.corrected_text,
+        grammar_mistakes=analysis.grammar_mistakes,
+        spelling_mistakes=analysis.spelling_mistakes,
+        punctuation_mistakes=analysis.punctuation_mistakes
+    )
     
 
 
