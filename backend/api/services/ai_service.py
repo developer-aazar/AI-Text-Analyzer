@@ -1,7 +1,7 @@
 from google import genai
 from api.core.config import settings
 import json
-from schemas.correction_schema import AIAnalysisResult, CorrectionResponse
+from api.schemas.correction_schema import AIAnalysisResponse, CorrectionResponse
 
 def call_ai(prompt):
 
@@ -22,7 +22,7 @@ def call_ai(prompt):
 
     result = json.loads(raw_output)
 
-    validated_result = AIAnalysisResult(**result)
+    validated_result = AIAnalysisResponse(**result)
 
     return validated_result
 
